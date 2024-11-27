@@ -1,0 +1,284 @@
+{
+	"info": {
+		"_postman_id": "bcf305bb-f358-40d7-b79f-ec930f1ec38a",
+		"name": "UNIJUI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19002863"
+	},
+	"item": [
+		{
+			"name": "4ever",
+			"item": [
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"matheus.burin@sou.unijui.edu.br\", \n    \"name\": \"Matheus\", \n    \"lastname\": \"Burin\", \n    \"birthDate\": \"2001-09-03\", \n    \"password\": \"123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:3000/users/register",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"matheus.burin@sou.unijui.edu.br\", \n    \"password\": \"123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:3000/users/login",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "news",
+					"item": [
+						{
+							"name": "list",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJtYXRoZXVzLmJ1cmluQHNvdS51bmlqdWkuZWR1LmJyIiwiaWF0IjoxNzMyNTgxMzM3LCJleHAiOjE3MzI1ODQ5Mzd9.SQKpBZhscgl2SFQiMfzBcSLoTQEfVQRgYnZNjNZMIPs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:3000/news?categoryId=2&offset=0",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"news"
+									],
+									"query": [
+										{
+											"key": "categoryId",
+											"value": "2"
+										},
+										{
+											"key": "offset",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJtYXRoZXVzLmJ1cmluQHNvdS51bmlqdWkuZWR1LmJyIiwiaWF0IjoxNzMyNTc0MTMyLCJleHAiOjE3MzI1Nzc3MzJ9.ra2i-agtGdvkfxUBj_MYcIgxcyH7adXpzMFVwSVXcL4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"matheus.burin@sou.unijui.edu.br\", \n    \"password\": \"123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:3000/news/1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"news",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "notification",
+					"item": [
+						{
+							"name": "list",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJtYXRoZXVzLmJ1cmluQHNvdS51bmlqdWkuZWR1LmJyIiwiaWF0IjoxNzMyNTgyNTk3LCJleHAiOjE3MzI1ODYxOTd9.xZJRm4AB_qNqO28yjl5BdbFZ9ON4tNTRSlmcl3zOjf0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:3000/notification/list",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"notification",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "read",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:3000/notification/read",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"notification",
+										"read"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Inserir ou Atualizar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Maria\",\n  \"last_name\": \"Souza\",\n  \"gender\": \"Feminino\",\n  \"cpf\": \"000.000.000-00\",\n  \"birth_date\": \"1990-01-01\",\n  \"email\": \"maria.souza@example.com\",\n  \"phone\": \"(11) 90000-0000\",\n  \"landline\": \"0000-0000\",\n  \"cep\": \"00000-000\",\n  \"state\": \"SP\",\n  \"city\": \"São Paulo\",\n  \"address\": \"Rua das Flores, 100\",\n  \"informations\": \"Informações adicionais aqui\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/people",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"people"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lista Pessoas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/people",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"people"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
