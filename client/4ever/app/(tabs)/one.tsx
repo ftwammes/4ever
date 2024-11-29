@@ -53,7 +53,6 @@ export default function TabTwoScreen() {
   return (
     <View style={styles.container}>
       <SafeAreaView style={styles.container}>
-      {/* Componente de Notificações */}
       <NotificationList notifications={notifications} />
     </SafeAreaView>
     </View>
