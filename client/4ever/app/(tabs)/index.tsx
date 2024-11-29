@@ -8,9 +8,9 @@ const exampleBase64 = 'iVBORw0KGgoAAAANSUhEUgAAAoAAAAHgCAYAAAC3qXK/AAAABHNCSVQIC
 
 export default function TabOneScreen() {
   return (
-    
+
     <View style={styles.container}>
-     <Card
+      <Card
         title="Clã BFF parte em missão"
         subtitle="para recuperar o Pergaminho da Verdade!"
         imageBase64={exampleBase64} // Base64 aqui
