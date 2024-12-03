@@ -1,4 +1,3 @@
-import { ForeignKey } from './../../node_modules/sequelize/types/model.d';
 import { Model, DataTypes, Optional } from 'sequelize';
 import { sequelize } from '../database'; // Certifique-se de que o caminho está correto
 
@@ -8,8 +7,8 @@ interface CategorySubscriptionAttributes {
   categoryId: number;
 }
 
-export interface CategorySubscriptionInput extends Optional<CategorySubscriptionAttributes, 'id'> {}
-export interface CategorySubscriptionOutput extends Required<CategorySubscriptionAttributes> {}
+export interface CategorySubscriptionInput extends Optional<CategorySubscriptionAttributes, 'id'> { }
+export interface CategorySubscriptionOutput extends Required<CategorySubscriptionAttributes> { }
 
 class CategorySubscription extends Model<CategorySubscriptionAttributes, CategorySubscriptionInput> implements CategorySubscriptionAttributes {
   public id!: number;

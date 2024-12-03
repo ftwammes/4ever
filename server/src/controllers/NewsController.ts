@@ -1,12 +1,8 @@
 import { Request, Response } from 'express';
-import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken';
+
 import News from '../models/News';
-import dotenv from 'dotenv';
 import CategorySubscription from '../models/CategorySubscription';
 import CategoryNews from '../models/CategoryNews';
-
-dotenv.config();
 
 const NewsController = {
     list: async (req: Request, res: Response) => {
@@ -38,8 +34,7 @@ const NewsController = {
             console.error('Erro ao buscar notícias:', error);
             return res.status(500).json({ error: 'Erro ao buscar notícias' });
         }
-    }, 
-
+    },
     get: async (req: Request, res: Response) => {
         try {
             const id = Number(req.params.id);

@@ -1,4 +1,3 @@
-import { ForeignKey } from './../../node_modules/sequelize/types/model.d';
 import { Model, DataTypes, Optional } from 'sequelize';
 import { sequelize } from '../database'; // Certifique-se de que o caminho está correto
 import CategorySubscription from './CategorySubscription';
@@ -9,8 +8,8 @@ interface CategoryNewsAttributes {
   newsId: number;
 }
 
-export interface CategoryNewsInput extends Optional<CategoryNewsAttributes, 'id'> {}
-export interface CategoryNewsOutput extends Required<CategoryNewsAttributes> {}
+export interface CategoryNewsInput extends Optional<CategoryNewsAttributes, 'id'> { }
+export interface CategoryNewsOutput extends Required<CategoryNewsAttributes> { }
 
 class CategoryNews extends Model<CategoryNewsAttributes, CategoryNewsInput> implements CategoryNewsAttributes {
   public id!: number;
@@ -37,7 +36,7 @@ CategoryNews.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'NEWS', 
+        model: 'NEWS',
         key: 'id',
       },
     }

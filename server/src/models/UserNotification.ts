@@ -1,4 +1,3 @@
-import { ForeignKey } from './../../node_modules/sequelize/types/model.d';
 import { Model, DataTypes, Optional } from 'sequelize';
 import { sequelize } from '../database'; // Certifique-se de que o caminho está correto
 
@@ -9,8 +8,8 @@ interface UserNotificationAttributes {
   readed?: boolean;
 }
 
-export interface UserNotificationInput extends Optional<UserNotificationAttributes, 'id'> {}
-export interface UserNotificationOutput extends Required<UserNotificationAttributes> {}
+export interface UserNotificationInput extends Optional<UserNotificationAttributes, 'id'> { }
+export interface UserNotificationOutput extends Required<UserNotificationAttributes> { }
 
 class UserNotification extends Model<UserNotificationAttributes, UserNotificationInput> implements UserNotificationAttributes {
   public id!: number;

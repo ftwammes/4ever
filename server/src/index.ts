@@ -9,10 +9,13 @@ import CategorySubscription from './models/CategorySubscription';
 import News from './models/News';
 import CategoryNews from './models/CategoryNews';
 import UserNotification from './models/UserNotification';
+import MarkedNews from './models/MarkedNews';
 
 import userRoutes from './routes/UserRoutes';
 import newsRoutes from './routes/NewsRoutes';
 import notificationRoutes from './routes/NotificationRoutes';
+import categoryRoutes from './routes/CategoryRoutes';
+import markedNewsRoutes from './routes/MarkedNewsRoutes';
 
 dotenv.config();
 
@@ -25,6 +28,10 @@ app.use('/users', userRoutes);
 app.use('/news', authMiddleware, newsRoutes);
 
 app.use('/notification', authMiddleware, notificationRoutes);
+
+app.use('/category', authMiddleware, categoryRoutes);
+
+app.use('/marked', authMiddleware, markedNewsRoutes);
 
 const PORT = process.env.PORT || 5000;
 
@@ -39,6 +46,7 @@ const PORT = process.env.PORT || 5000;
     await News.sync();
     await CategoryNews.sync();
     await UserNotification.sync();
+    await MarkedNews.sync();
 
     app.listen(PORT, () => {
       console.log(`Server running on port ${PORT}`);
