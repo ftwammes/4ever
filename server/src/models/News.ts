@@ -1,6 +1,7 @@
 import { Model, DataTypes, Optional } from 'sequelize';
 import { sequelize } from '../database'; // Certifique-se de que o caminho está correto
 import CategoryNews from './CategoryNews';
+import MarkedNews from './MarkedNews';
 
 interface NewsAttributes {
     id: number;
@@ -72,5 +73,9 @@ News.init(
 News.hasMany(CategoryNews, { foreignKey: 'newsId' });
 
 CategoryNews.belongsTo(News, { foreignKey: 'newsId' });
+
+News.hasMany(MarkedNews, { foreignKey: 'newsId' });
+
+MarkedNews.belongsTo(News, { foreignKey: 'newsId' });
 
 export default News;

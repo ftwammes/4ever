@@ -1,4 +1,3 @@
-import { ForeignKey } from './../../node_modules/sequelize/types/model.d';
 import { Model, DataTypes, Optional } from 'sequelize';
 import { sequelize } from '../database'; // Certifique-se de que o caminho está correto
 
@@ -8,8 +7,8 @@ interface MarkedNewsAttributes {
   newsId: number;
 }
 
-export interface MarkedNewsInput extends Optional<MarkedNewsAttributes, 'id'> {}
-export interface MarkedNewsOutput extends Required<MarkedNewsAttributes> {}
+export interface MarkedNewsInput extends Optional<MarkedNewsAttributes, 'id'> { }
+export interface MarkedNewsOutput extends Required<MarkedNewsAttributes> { }
 
 class MarkedNews extends Model<MarkedNewsAttributes, MarkedNewsInput> implements MarkedNewsAttributes {
   public id!: number;

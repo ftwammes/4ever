@@ -1,11 +1,6 @@
 import { Request, Response } from 'express';
-import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken';
-import dotenv from 'dotenv';
-import UserNotification from '../models/UserNotification';
-import { read } from 'fs';
 
-dotenv.config();
+import UserNotification from '../models/UserNotification';
 
 const NotificationController = {
   list: async (req: Request, res: Response) => {
@@ -29,7 +24,7 @@ const NotificationController = {
   },
   read: async (req: Request, res: Response) => {
     try {
-      const id = Number(req.params.id);
+      const id = Number(req.body.id);
       const notification = await UserNotification.update({
         readed: true
       }, {

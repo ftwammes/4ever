@@ -15,6 +15,9 @@
 						{
 							"name": "register",
 							"request": {
+								"auth": {
+									"type": "noauth"
+								},
 								"method": "POST",
 								"header": [],
 								"body": {
@@ -47,6 +50,9 @@
 						{
 							"name": "login",
 							"request": {
+								"auth": {
+									"type": "noauth"
+								},
 								"method": "POST",
 								"header": [],
 								"body": {
@@ -84,16 +90,6 @@
 						{
 							"name": "list",
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJtYXRoZXVzLmJ1cmluQHNvdS51bmlqdWkuZWR1LmJyIiwiaWF0IjoxNzMyNTgxMzM3LCJleHAiOjE3MzI1ODQ5Mzd9.SQKpBZhscgl2SFQiMfzBcSLoTQEfVQRgYnZNjNZMIPs",
-											"type": "string"
-										}
-									]
-								},
 								"method": "GET",
 								"header": [],
 								"url": {
@@ -129,16 +125,6 @@
 								"disableBodyPruning": true
 							},
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJtYXRoZXVzLmJ1cmluQHNvdS51bmlqdWkuZWR1LmJyIiwiaWF0IjoxNzMyNTc0MTMyLCJleHAiOjE3MzI1Nzc3MzJ9.ra2i-agtGdvkfxUBj_MYcIgxcyH7adXpzMFVwSVXcL4",
-											"type": "string"
-										}
-									]
-								},
 								"method": "GET",
 								"header": [],
 								"body": {
@@ -176,20 +162,10 @@
 						{
 							"name": "list",
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJtYXRoZXVzLmJ1cmluQHNvdS51bmlqdWkuZWR1LmJyIiwiaWF0IjoxNzMyNTgyNTk3LCJleHAiOjE3MzI1ODYxOTd9.xZJRm4AB_qNqO28yjl5BdbFZ9ON4tNTRSlmcl3zOjf0",
-											"type": "string"
-										}
-									]
-								},
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://127.0.0.1:3000/notification/list",
+									"raw": "http://127.0.0.1:3000/notification/list?offset=0",
 									"protocol": "http",
 									"host": [
 										"127",
@@ -201,6 +177,12 @@
 									"path": [
 										"notification",
 										"list"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										}
 									]
 								}
 							},
@@ -211,6 +193,15 @@
 							"request": {
 								"method": "PUT",
 								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
 									"raw": "http://127.0.0.1:3000/notification/read",
 									"protocol": "http",
@@ -230,55 +221,265 @@
 							"response": []
 						}
 					]
-				}
-			]
-		},
-		{
-			"name": "Inserir ou Atualizar",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n  \"name\": \"Maria\",\n  \"last_name\": \"Souza\",\n  \"gender\": \"Feminino\",\n  \"cpf\": \"000.000.000-00\",\n  \"birth_date\": \"1990-01-01\",\n  \"email\": \"maria.souza@example.com\",\n  \"phone\": \"(11) 90000-0000\",\n  \"landline\": \"0000-0000\",\n  \"cep\": \"00000-000\",\n  \"state\": \"SP\",\n  \"city\": \"São Paulo\",\n  \"address\": \"Rua das Flores, 100\",\n  \"informations\": \"Informações adicionais aqui\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+				},
+				{
+					"name": "category",
+					"item": [
+						{
+							"name": "list",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:3000/category/list?offset=0",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"category",
+										"list"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "listAll",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:3000/category/listAll?offset=0",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"category",
+										"listAll"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "subscribe",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:3000/category/subscribe",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"category",
+										"subscribe"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "unsubscribe",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:3000/category/unsubscribe",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"category",
+										"unsubscribe"
+									]
+								}
+							},
+							"response": []
 						}
+					]
+				},
+				{
+					"name": "marked",
+					"item": [
+						{
+							"name": "list",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:3000/marked/list?offset=0",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"marked",
+										"list"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mark",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:3000/marked/mark",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"marked",
+										"mark"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "unmark",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:3000/marked/unmark",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"marked",
+										"unmark"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJtYXRoZXVzLmJ1cmluQHNvdS51bmlqdWkuZWR1LmJyIiwiaWF0IjoxNzMzMjY1OTUyLCJleHAiOjE3MzMyNjk1NTJ9.EArP08onQDBfiFst5u3RYWeZBmNGf6eBR1duE9QpC8M",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
 					}
 				},
-				"url": {
-					"raw": "http://localhost:3000/people",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"people"
-					]
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
 				}
-			},
-			"response": []
-		},
-		{
-			"name": "Lista Pessoas",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/people",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"people"
-					]
-				}
-			},
-			"response": []
+			]
 		}
 	]
 }
