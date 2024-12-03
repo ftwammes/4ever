@@ -62,7 +62,7 @@ export default function TabLayout() {
       />
        {/* Tab 1 */}
        <Tabs.Screen
-        name="one"
+        name="notification"
         options={{
           title: '4ever',
           tabBarIcon: ({ color }) => 
@@ -92,7 +92,7 @@ export default function TabLayout() {
       />
         {/* Tab 2 */}
         <Tabs.Screen
-        name="two"
+        name="marked"
         options={{
           title: '4ever',
           tabBarIcon: ({ color }) => 
@@ -122,7 +122,7 @@ export default function TabLayout() {
       />
       {/* Tab 3 */}
       <Tabs.Screen
-        name="three"
+        name="user"
         options={{
           title: '4ever',
           tabBarIcon: ({ color }) => 

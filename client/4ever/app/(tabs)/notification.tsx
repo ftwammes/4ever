@@ -4,6 +4,8 @@ import EditScreenInfo from '@/components/EditScreenInfo';
 import { Text, View } from '@/components/Themed';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import NotificationList from '@/components/NotificationList';
+import notificationListCss from '../styles/notificationCss';
+
 
 export default function TabTwoScreen() {
   // Exemplo de lista de notificações
@@ -51,27 +53,11 @@ export default function TabTwoScreen() {
     },
   ];
   return (
-    <View style={styles.container}>
-      <SafeAreaView style={styles.container}>
+    <View style={notificationListCss.container}>
+      <SafeAreaView style={notificationListCss.container}>
       <NotificationList notifications={notifications} />
     </SafeAreaView>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
-});
