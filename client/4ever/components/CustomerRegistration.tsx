@@ -4,14 +4,12 @@ import { View, StyleSheet, TextInput, Text, TouchableOpacity, Image } from 'reac
 const CustomRegisterScreen: React.FC = () => {
     return (
         <View style={styles.container}>
-            {/* Imagem no topo */}
             <Image
-                source={require('../assets/images/logo.png')} // Substitua pelo caminho correto do logo
+                source={require('../assets/images/logo.png')} 
                 resizeMode="contain"
                 style={styles.logo}
             />
 
-            {/* Bloco branco contendo os campos */}
             <View style={styles.inputContainer}>
                 <TextInput
                     style={styles.input}
@@ -42,7 +40,6 @@ const CustomRegisterScreen: React.FC = () => {
                 />
             </View>
 
-            {/* Botão de Cadastrar */}
             <TouchableOpacity style={styles.button}>
                 <Text style={styles.buttonText}>Cadastrar</Text>
             </TouchableOpacity>
@@ -57,7 +54,7 @@ const styles = StyleSheet.create({
         width: '100%',
         height: '100%',
         flex: 1,
-        backgroundColor: '#178591', // Cor de fundo
+        backgroundColor: '#178591', 
         justifyContent: 'center',
         alignItems: 'center',
         paddingHorizontal: 20,
@@ -66,16 +63,16 @@ const styles = StyleSheet.create({
         width: '50%',
         height: '20%',
         marginBottom: '10%',
-        opacity: 0.1, // Transparência na imagem
+        opacity: 0.1, 
     },
     inputContainer: {
         width: '90%',
-        backgroundColor: '#D9D9D9', // Fundo branco para os campos
+        backgroundColor: '#D9D9D9', 
         borderRadius: 15,
         padding: 15,
         alignItems: 'center',
-        elevation: 3, // Sombra no Android
-        shadowColor: '#000', // Sombra no iOS
+        elevation: 3, 
+        shadowColor: '#000', 
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.2,
         shadowRadius: 4,
@@ -83,8 +80,8 @@ const styles = StyleSheet.create({
     },
     input: {
         width: '100%',
-        height: 40, // Altura reduzida
-        backgroundColor: '#A9C9CC', // Cor de fundo dos inputs
+        height: 40, 
+        backgroundColor: '#A9C9CC', 
         borderRadius: 8,
         paddingHorizontal: 10,
         marginVertical: 8,
