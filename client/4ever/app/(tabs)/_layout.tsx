@@ -15,7 +15,6 @@ function TabBarIcon(props: { name: React.ComponentProps<typeof FontAwesome>['nam
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
-  const navigation = useNavigation(); // Navegação para redirecionar para a tela de perfil
 
   return (
     <Tabs
