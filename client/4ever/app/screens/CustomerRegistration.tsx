@@ -1,11 +1,12 @@
 import React from 'react';
 import { View, StyleSheet, TextInput, Text, TouchableOpacity, Image } from 'react-native';
+import logo from '../../assets/images/logo.png';
 
 const CustomRegisterScreen: React.FC = () => {
     return (
         <View style={styles.container}>
             <Image
-                source={require('../assets/images/logo.png')} 
+                source={logo} 
                 resizeMode="contain"
                 style={styles.logo}
             />

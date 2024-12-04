@@ -1,12 +1,13 @@
 import React from 'react';
 import { View, StyleSheet, TextInput, Button, Text, TouchableOpacity, Image } from 'react-native';
-import loginCss from './styles/LoginCSS';
+import loginCss from '../styles/LoginCSS';
+import logo from '../../assets/images/logo.png';
 
 const CustomLoginScreen: React.FC = () => {
     return (
         <View style={loginCss.container}>
             <Image
-                source={require('../assets/images/logo.png')} // Substitua pelo caminho correto do logo
+                source={logo} // Substitua pelo caminho correto do logo
                 resizeMode="contain"
                 style={loginCss.logo}
             />
