@@ -1,12 +1,20 @@
 import React from 'react';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { View, Pressable } from 'react-native';
+import { View, Image, Pressable, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import Colors from '@/constants/Colors';
 import { useColorScheme } from '@/components/useColorScheme';
 import { useClientOnlyValue } from '@/components/useClientOnlyValue';
 import { Tabs } from 'expo-router';
+import find from '../../assets/images/search.png';
+import user from '../../assets/images/user.png';
+import logo from '../../assets/images/logoTopBar.png';
+import home from '../../assets/images/home.png';
+import notification from '../../assets/images/notification.png';
+import favorities from '../../assets/images/favorites.png';
+import engine from '../../assets/images/engine.png';
+
 
 // Função para renderizar os ícones nas tabs
 function TabBarIcon(props: { name: React.ComponentProps<typeof FontAwesome>['name']; color: string }) {
@@ -33,86 +41,102 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: '4ever',
-          tabBarIcon: ({ }) => 
-          <TabBarIcon name="home" color={"white"} />, 
+          headerTitle: () => (
+            <Image
+              source={logo} // Substitua pelo caminho correto para o logo
+            />
+          ),
+          tabBarIcon: ({ }) =>
+            <Image
+              source={home} // Substitua pelo caminho correto para o logo
+            />,
+          tabBarLabel: "",
           headerRight: () => (
+
             <View style={{ flexDirection: 'row', alignItems: 'center', marginRight: 15 }}>
               {/* Ícone de Busca */}
               <Pressable style={{ marginRight: 20 }}> {/* Adiciona margem direita para espaço */}
-                <FontAwesome
-                  name="search" // Ícone de busca
-                  size={25}
-                  color="white"
+                <Image
+                  source={find} // Substitua pelo caminho correto do logo
+                  resizeMode="contain"
                 />
               </Pressable>
 
               {/* Ícone de Perfil */}
-              <Pressable onPress={() => {}}>
-                <FontAwesome
-                  name="user"
-                  size={25}
-                  color="white"
+              <Pressable onPress={() => { }}>
+                <Image
+                  source={user} // Substitua pelo caminho correto do logo
+                  resizeMode="contain"
                 />
               </Pressable>
             </View>
           ),
         }}
       />
-       {/* Tab 1 */}
-       <Tabs.Screen
+      {/* Tab 1 */}
+      <Tabs.Screen
         name="notification"
         options={{
-          title: '4ever',
-          tabBarIcon: ({ color }) => 
-          <TabBarIcon name="bell" color={"white"} />, 
+          headerTitle: () => (
+            <Image
+              source={logo} // Substitua pelo caminho correto para o logo
+            />
+          ),
+          tabBarIcon: ({ color }) =>
+            <Image
+              source={notification} // Substitua pelo caminho correto para o logo
+            />,
+          tabBarLabel: "",
           headerRight: () => (
             <View style={{ flexDirection: 'row', alignItems: 'center', marginRight: 15 }}>
               {/* Ícone de Busca */}
               <Pressable style={{ marginRight: 20 }}> {/* Adiciona margem direita para espaço */}
-                <FontAwesome
-                  name="search" // Ícone de busca
-                  size={25}
-                  color="white"
+                <Image
+                  source={find} // Substitua pelo caminho correto do logo
+                  resizeMode="contain"
                 />
               </Pressable>
 
               {/* Ícone de Perfil */}
-              <Pressable onPress={() => {}}>
-                <FontAwesome
-                  name="user"
-                  size={25}
-                  color="white"
+              <Pressable onPress={() => { }}>
+                <Image
+                  source={user} // Substitua pelo caminho correto do logo
+                  resizeMode="contain"
                 />
               </Pressable>
             </View>
           ),
         }}
       />
-        {/* Tab 2 */}
-        <Tabs.Screen
+      {/* Tab 2 */}
+      <Tabs.Screen
         name="marked"
         options={{
-          title: '4ever',
-          tabBarIcon: ({ color }) => 
-          <TabBarIcon name="bookmark" color={"white"} />, 
+          headerTitle: () => (
+            <Image
+              source={logo} // Substitua pelo caminho correto para o logo
+            />
+          ),
+          tabBarIcon: ({ color }) =>
+            <Image
+              source={favorities} // Substitua pelo caminho correto para o logo
+            />,
+          tabBarLabel: "",
           headerRight: () => (
             <View style={{ flexDirection: 'row', alignItems: 'center', marginRight: 15 }}>
               {/* Ícone de Busca */}
               <Pressable style={{ marginRight: 20 }}> {/* Adiciona margem direita para espaço */}
-                <FontAwesome
-                  name="search" // Ícone de busca
-                  size={25}
-                  color="white"
+                <Image
+                  source={find} // Substitua pelo caminho correto do logo
+                  resizeMode="contain"
                 />
               </Pressable>
 
               {/* Ícone de Perfil */}
-              <Pressable onPress={() => {}}>
-                <FontAwesome
-                  name="user"
-                  size={25}
-                  color="white"
+              <Pressable onPress={() => { }}>
+                <Image
+                  source={user} // Substitua pelo caminho correto do logo
+                  resizeMode="contain"
                 />
               </Pressable>
             </View>
@@ -123,26 +147,31 @@ export default function TabLayout() {
       <Tabs.Screen
         name="user"
         options={{
-          title: '4ever',
-          tabBarIcon: ({ color }) => 
-          <TabBarIcon name="cog" color={"white"} />, 
+          headerTitle: () => (
+            <Image
+              source={logo} // Substitua pelo caminho correto para o logo
+            />
+          ),
+          tabBarIcon: ({ color }) =>
+            <Image
+              source={engine} // Substitua pelo caminho correto para o logo
+            />,
+          tabBarLabel: "",
           headerRight: () => (
             <View style={{ flexDirection: 'row', alignItems: 'center', marginRight: 15 }}>
               {/* Ícone de Busca */}
               <Pressable style={{ marginRight: 20 }}> {/* Adiciona margem direita para espaço */}
-                <FontAwesome
-                  name="search" // Ícone de busca
-                  size={25}
-                  color="white"
+                <Image
+                  source={find} // Substitua pelo caminho correto do logo
+                  resizeMode="contain"
                 />
               </Pressable>
 
               {/* Ícone de Perfil */}
-              <Pressable onPress={() => {}}>
-                <FontAwesome
-                  name="user"
-                  size={25}
-                  color="white"
+              <Pressable onPress={() => { }}>
+                <Image
+                  source={user} // Substitua pelo caminho correto do logo
+                  resizeMode="contain"
                 />
               </Pressable>
             </View>
