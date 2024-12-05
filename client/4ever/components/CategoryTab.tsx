@@ -25,27 +25,29 @@ const CategoryTabs = () => {
                 showsHorizontalScrollIndicator={false}
                 contentContainerStyle={categoryCSS.scrollContainer}
             >
-                {categories.map((category) => (
-                    <TouchableOpacity
-                        key={category.id}
-                        style={categoryCSS.tab}
-                        onPress={() => handlePress(category.id)}
-                    >
-                        <Text
-                            style={[
-                                categoryCSS.tabText,
-                                selectedCategory === category.id && categoryCSS.selectedTabText,
-                            ]}
+                {categories.map((category) => {
+                    return (
+                        <TouchableOpacity
+                            key={category.id}
+                            style={categoryCSS.tab}
+                            onPress={() => handlePress(category.id)}
                         >
-                            {category.name}
-                        </Text>
-                        {selectedCategory === category.id && (
-                            <View style={categoryCSS.underlineContainer}>
-                                <View style={categoryCSS.underline} />
-                            </View>
-                        )}
-                    </TouchableOpacity>
-                ))}
+                            <Text
+                                style={[
+                                    categoryCSS.tabText,
+                                    selectedCategory === category.id ? categoryCSS.selectedTabText : null,
+                                ]}
+                            >
+                                {category.name}
+                            </Text>
+                            {selectedCategory === category.id ? (
+                                <View style={categoryCSS.underlineContainer}>
+                                    <View style={categoryCSS.underline} />
+                                </View>
+                            ) : null}
+                        </TouchableOpacity>
+                    );
+                })}
             </ScrollView>
         </View>
     );
