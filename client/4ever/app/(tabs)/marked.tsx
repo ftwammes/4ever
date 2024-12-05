@@ -13,7 +13,7 @@ export default function TabTwoScreen() {
       <Card
         title="Clã BFF teste"
         subtitle="para recuperar o Pergaminho da Verdade!"
-        imageBase64={exampleBase64} // Base64 aqui
+        imageBase64={exampleBase64} 
         timestamp="26/11/2024 - 08:00"
       />
     </View>

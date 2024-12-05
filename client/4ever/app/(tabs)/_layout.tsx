@@ -28,44 +28,39 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        tabBarStyle: { backgroundColor: '#178591' }, // Cor do fundo da barra de navegação
-        headerStyle: { backgroundColor: '#178591' }, // Cor de fundo do cabeçalho
-        headerTintColor: 'white', // Cor do texto do cabeçalho
+        tabBarStyle: { backgroundColor: '#178591' }, 
+        headerStyle: { backgroundColor: '#178591' }, 
+        headerTintColor: 'white', 
         headerTitleStyle: { fontWeight: 'bold' },
-        // Disable the static render of the header on web
-        // to prevent a hydration error in React Navigation v6.
         headerShown: useClientOnlyValue(false, true),
       }}
     >
-      {/* Tela principal */}
       <Tabs.Screen
         name="index"
         options={{
           headerTitle: () => (
             <Image
-              source={logo} // Substitua pelo caminho correto para o logo
+              source={logo} 
             />
           ),
           tabBarIcon: ({ }) =>
             <Image
-              source={home} // Substitua pelo caminho correto para o logo
+              source={home} 
             />,
           tabBarLabel: "",
           headerRight: () => (
 
             <View style={{ flexDirection: 'row', alignItems: 'center', marginRight: 15 }}>
-              {/* Ícone de Busca */}
-              <Pressable style={{ marginRight: 20 }}> {/* Adiciona margem direita para espaço */}
+              <Pressable style={{ marginRight: 20 }}> 
                 <Image
-                  source={find} // Substitua pelo caminho correto do logo
+                  source={find} 
                   resizeMode="contain"
                 />
               </Pressable>
 
-              {/* Ícone de Perfil */}
               <Pressable onPress={() => { }}>
                 <Image
-                  source={user} // Substitua pelo caminho correto do logo
+                  source={user} 
                   resizeMode="contain"
                 />
               </Pressable>
@@ -73,34 +68,31 @@ export default function TabLayout() {
           ),
         }}
       />
-      {/* Tab 1 */}
       <Tabs.Screen
         name="notification"
         options={{
           headerTitle: () => (
             <Image
-              source={logo} // Substitua pelo caminho correto para o logo
+              source={logo} 
             />
           ),
           tabBarIcon: ({ color }) =>
             <Image
-              source={notification} // Substitua pelo caminho correto para o logo
+              source={notification} 
             />,
           tabBarLabel: "",
           headerRight: () => (
             <View style={{ flexDirection: 'row', alignItems: 'center', marginRight: 15 }}>
-              {/* Ícone de Busca */}
-              <Pressable style={{ marginRight: 20 }}> {/* Adiciona margem direita para espaço */}
+              <Pressable style={{ marginRight: 20 }}> 
                 <Image
-                  source={find} // Substitua pelo caminho correto do logo
+                  source={find} 
                   resizeMode="contain"
                 />
               </Pressable>
 
-              {/* Ícone de Perfil */}
               <Pressable onPress={() => { }}>
                 <Image
-                  source={user} // Substitua pelo caminho correto do logo
+                  source={user} 
                   resizeMode="contain"
                 />
               </Pressable>
@@ -108,34 +100,31 @@ export default function TabLayout() {
           ),
         }}
       />
-      {/* Tab 2 */}
       <Tabs.Screen
         name="marked"
         options={{
           headerTitle: () => (
             <Image
-              source={logo} // Substitua pelo caminho correto para o logo
+              source={logo} 
             />
           ),
           tabBarIcon: ({ color }) =>
             <Image
-              source={favorities} // Substitua pelo caminho correto para o logo
+              source={favorities} 
             />,
           tabBarLabel: "",
           headerRight: () => (
             <View style={{ flexDirection: 'row', alignItems: 'center', marginRight: 15 }}>
-              {/* Ícone de Busca */}
-              <Pressable style={{ marginRight: 20 }}> {/* Adiciona margem direita para espaço */}
+              <Pressable style={{ marginRight: 20 }}> 
                 <Image
-                  source={find} // Substitua pelo caminho correto do logo
+                  source={find} 
                   resizeMode="contain"
                 />
               </Pressable>
 
-              {/* Ícone de Perfil */}
               <Pressable onPress={() => { }}>
                 <Image
-                  source={user} // Substitua pelo caminho correto do logo
+                  source={user} 
                   resizeMode="contain"
                 />
               </Pressable>
@@ -143,34 +132,30 @@ export default function TabLayout() {
           ),
         }}
       />
-      {/* Tab 3 */}
       <Tabs.Screen
         name="user"
         options={{
           headerTitle: () => (
             <Image
-              source={logo} // Substitua pelo caminho correto para o logo
+              source={logo} 
             />
           ),
           tabBarIcon: ({ color }) =>
             <Image
-              source={engine} // Substitua pelo caminho correto para o logo
+              source={engine} 
             />,
           tabBarLabel: "",
           headerRight: () => (
             <View style={{ flexDirection: 'row', alignItems: 'center', marginRight: 15 }}>
-              {/* Ícone de Busca */}
-              <Pressable style={{ marginRight: 20 }}> {/* Adiciona margem direita para espaço */}
+              <Pressable style={{ marginRight: 20 }}> 
                 <Image
-                  source={find} // Substitua pelo caminho correto do logo
+                  source={find} 
                   resizeMode="contain"
                 />
               </Pressable>
-
-              {/* Ícone de Perfil */}
               <Pressable onPress={() => { }}>
                 <Image
-                  source={user} // Substitua pelo caminho correto do logo
+                  source={user} 
                   resizeMode="contain"
                 />
               </Pressable>
