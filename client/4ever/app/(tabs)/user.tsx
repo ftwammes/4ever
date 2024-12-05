@@ -1,19 +1,23 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Image } from 'react-native';
 
 import EditScreenInfo from '@/components/EditScreenInfo';
 import { Text, View } from '@/components/Themed';
 import { TouchableOpacity } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons'; 
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import userCss from '../styles/user';
+import user from '../../assets/images/userBlue.png';
 
 
 export default function TabTwoScreen() {
   return (
     <View style={userCss.container}>
-     
+
       {/* Perfil do usuário */}
       <View style={userCss.profileContainer}>
-        <Icon name="account-circle" size={100} color="#007b7f" />
+        <Image
+          source={user} // Substitua pelo caminho correto para o logo
+          style={userCss.logo}
+        />
         <Text style={userCss.profileText}>acesse sua conta</Text>
         <Text style={userCss.profileSubText}>ou cadastre-se grátis</Text>
       </View>

@@ -4,7 +4,7 @@ const userCss = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#FFFFFF',
     height: '100%',
   },
   header: {
@@ -23,8 +23,7 @@ const userCss = StyleSheet.create({
   },
   profileText: {
     fontSize: 18,
-    fontWeight: 'bold',
-    color: '#007b7f',
+    color: '#000000',
     marginTop: 10,
   },
   profileSubText: {
@@ -58,12 +57,17 @@ const userCss = StyleSheet.create({
   },
   optionText: {
     fontSize: 16,
-    color: '#007b7f',
+    color: '#000000',
     marginLeft: 10,
   },
   versionText: {
     fontSize: 16,
     color: '#007b7f',
+  },
+  logo: {
+    width: 50,
+    height: 50,
+    marginTop: 30
   },
 });
 
