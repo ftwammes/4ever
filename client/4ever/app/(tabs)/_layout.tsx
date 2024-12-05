@@ -8,7 +8,6 @@ import { useColorScheme } from '@/components/useColorScheme';
 import { useClientOnlyValue } from '@/components/useClientOnlyValue';
 import { Tabs } from 'expo-router';
 
-// Função para renderizar os ícones nas tabs
 function TabBarIcon(props: { name: React.ComponentProps<typeof FontAwesome>['name']; color: string }) {
   return <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />;
 }
@@ -20,16 +19,13 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        tabBarStyle: { backgroundColor: '#178591' }, // Cor do fundo da barra de navegação
-        headerStyle: { backgroundColor: '#178591' }, // Cor de fundo do cabeçalho
-        headerTintColor: 'white', // Cor do texto do cabeçalho
+        tabBarStyle: { backgroundColor: '#178591' }, 
+        headerStyle: { backgroundColor: '#178591' }, 
+        headerTintColor: 'white', 
         headerTitleStyle: { fontWeight: 'bold' },
-        // Disable the static render of the header on web
-        // to prevent a hydration error in React Navigation v6.
         headerShown: useClientOnlyValue(false, true),
       }}
     >
-      {/* Tela principal */}
       <Tabs.Screen
         name="index"
         options={{
@@ -38,16 +34,14 @@ export default function TabLayout() {
           <TabBarIcon name="home" color={"white"} />, 
           headerRight: () => (
             <View style={{ flexDirection: 'row', alignItems: 'center', marginRight: 15 }}>
-              {/* Ícone de Busca */}
-              <Pressable style={{ marginRight: 20 }}> {/* Adiciona margem direita para espaço */}
+              <Pressable style={{ marginRight: 20 }}> 
                 <FontAwesome
-                  name="search" // Ícone de busca
+                  name="search" 
                   size={25}
                   color="white"
                 />
               </Pressable>
 
-              {/* Ícone de Perfil */}
               <Pressable onPress={() => {}}>
                 <FontAwesome
                   name="user"
@@ -59,7 +53,6 @@ export default function TabLayout() {
           ),
         }}
       />
-       {/* Tab 1 */}
        <Tabs.Screen
         name="notification"
         options={{
@@ -68,16 +61,14 @@ export default function TabLayout() {
           <TabBarIcon name="bell" color={"white"} />, 
           headerRight: () => (
             <View style={{ flexDirection: 'row', alignItems: 'center', marginRight: 15 }}>
-              {/* Ícone de Busca */}
-              <Pressable style={{ marginRight: 20 }}> {/* Adiciona margem direita para espaço */}
+              <Pressable style={{ marginRight: 20 }}> 
                 <FontAwesome
-                  name="search" // Ícone de busca
+                  name="search" 
                   size={25}
                   color="white"
                 />
               </Pressable>
 
-              {/* Ícone de Perfil */}
               <Pressable onPress={() => {}}>
                 <FontAwesome
                   name="user"
@@ -89,7 +80,6 @@ export default function TabLayout() {
           ),
         }}
       />
-        {/* Tab 2 */}
         <Tabs.Screen
         name="marked"
         options={{
@@ -98,16 +88,14 @@ export default function TabLayout() {
           <TabBarIcon name="bookmark" color={"white"} />, 
           headerRight: () => (
             <View style={{ flexDirection: 'row', alignItems: 'center', marginRight: 15 }}>
-              {/* Ícone de Busca */}
-              <Pressable style={{ marginRight: 20 }}> {/* Adiciona margem direita para espaço */}
+              <Pressable style={{ marginRight: 20 }}>
                 <FontAwesome
-                  name="search" // Ícone de busca
+                  name="search" 
                   size={25}
                   color="white"
                 />
               </Pressable>
 
-              {/* Ícone de Perfil */}
               <Pressable onPress={() => {}}>
                 <FontAwesome
                   name="user"
@@ -119,7 +107,6 @@ export default function TabLayout() {
           ),
         }}
       />
-      {/* Tab 3 */}
       <Tabs.Screen
         name="user"
         options={{
@@ -128,16 +115,13 @@ export default function TabLayout() {
           <TabBarIcon name="cog" color={"white"} />, 
           headerRight: () => (
             <View style={{ flexDirection: 'row', alignItems: 'center', marginRight: 15 }}>
-              {/* Ícone de Busca */}
-              <Pressable style={{ marginRight: 20 }}> {/* Adiciona margem direita para espaço */}
+              <Pressable style={{ marginRight: 20 }}> 
                 <FontAwesome
-                  name="search" // Ícone de busca
+                  name="search"
                   size={25}
                   color="white"
                 />
               </Pressable>
-
-              {/* Ícone de Perfil */}
               <Pressable onPress={() => {}}>
                 <FontAwesome
                   name="user"

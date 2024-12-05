@@ -11,15 +11,12 @@ const exampleBase64 = 'iVBORw0KGgoAAAANSUhEUgAAAoAAAAHgCAYAAAC3qXK/AAAABHNCSVQIC
 export default function TabOneScreen() {
   return (
     <View style={{ flex: 1 }}>
-      {/* Adicionando a Tab Superior */}
       <CategoryTabs />
-
-      {/* Conteúdo Principal */}
       <View style={indexCss.container}>
         <Card
           title="Clã BFF parte em missão"
           subtitle="para recuperar o Pergaminho da Verdade!"
-          imageBase64={exampleBase64} // Base64 aqui
+          imageBase64={exampleBase64} 
           timestamp="26/11/2024 - 08:00"
         />
       </View>
