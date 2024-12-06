@@ -8,13 +8,11 @@ import notificationListCss from '../styles/notificationCss';
 
 
 
-export default function TabTwoScreen() {
+export default function Notification() {
 
   return (
     <View style={notificationListCss.container}>
-      <SafeAreaView style={notificationListCss.container}>
       <NotificationList/>
-    </SafeAreaView>
     </View>
   );
 }

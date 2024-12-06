@@ -2,22 +2,30 @@ import { Request, Response } from 'express';
 
 import MarkedNews from '../models/MarkedNews';
 import News from '../models/News';
+import { QueryTypes } from 'sequelize';
 
 const MarkedNewsController = {
     list: async (req: Request, res: Response) => {
         try {
             const offset = Number(req.query.offset) || 0;
-            const markedNews = await MarkedNews.findAll({
-                limit: 15,
-                offset,
-                order: [['id', 'DESC']],
-                include: [{
-                    model: News,
-                    required: true
-                }],
-                where: {
-                    userId: req.body.session.userId
-                }
+            
+            if (!MarkedNews.sequelize) {
+                throw new Error('Sequelize instance is not available on MarkedNews model');
+            }
+
+            const markedNews = await MarkedNews.sequelize.query(`
+                SELECT N.*
+                FROM public."NEWS" N
+                inner join public."MARKED_NEWS" mn on mn."newsId" = n.id 
+                WHERE mn."userId" = :userId
+                ORDER BY mn.id DESC
+                LIMIT 5 OFFSET :offset
+            `, {
+                replacements: {
+                    userId: req.body.session.userId,
+                    offset
+                },
+                type: QueryTypes.SELECT
             });
 
             return res.status(200).json(markedNews);

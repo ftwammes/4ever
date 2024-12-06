@@ -1,21 +1,44 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import categoryCSS from './css/CategoryTabCSS'
+import Connector from '@/utils/Connector';
+interface Category {
+    id: number;
+    name: string;
+}
+interface CategoryTabsProps {
+    handleChangeCategory: (category: number) => void;
+}
 
-const categories = [
-    { id: 1, name: 'Destaques' },
-    { id: 2, name: 'Mundo' },
-    { id: 3, name: 'Economia' },
-    { id: 4, name: 'Ciência' },
-    { id: 5, name: 'Política' },
-    { id: 6, name: 'Esportes' },
-];
+const CategoryTabs: React.FC<CategoryTabsProps> = ({ handleChangeCategory }) => {
+    const [categories, setCategories] = useState<Category[]>([]);
+    const [selectedCategory, setSelectedCategory] = useState(1);
 
-const CategoryTabs = () => {
-    const [selectedCategory, setSelectedCategory] = useState(1); // Estado para a aba selecionada
+    const fetchCategories = async () => {
+        try {
+            const connector = new Connector();
+            const data = (await connector.getSubscribedCategory()).map(
+                (cat: any) => ({
+                    id: cat.id,
+                    name: cat.name
+                })
+            );
+
+            handlePress(data[0].id);
+
+            setCategories(data);
+        } catch (error) {
+            console.error('Erro ao buscar categorias:', error);
+        }
+    };
+
+    useEffect(() => {
+        fetchCategories();
+    }, []);
 
     const handlePress = (id: number) => {
         setSelectedCategory(id);
+        handleChangeCategory(id);
     };
 
     return (

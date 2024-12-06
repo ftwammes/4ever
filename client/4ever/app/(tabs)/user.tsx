@@ -8,7 +8,7 @@ import userCss from '../styles/user';
 import user from '../../assets/images/userBlue.png';
 
 
-export default function TabTwoScreen() {
+export default function User() {
   return (
     <View style={userCss.container}>
 

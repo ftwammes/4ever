@@ -1,5 +1,7 @@
 import { Model, DataTypes, Optional } from 'sequelize';
 import { sequelize } from '../database'; // Certifique-se de que o caminho está correto
+import Category from './Category';
+import CategoryNews from './CategoryNews';
 
 interface CategorySubscriptionAttributes {
   id: number;

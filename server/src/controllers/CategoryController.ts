@@ -32,7 +32,7 @@ const CategoryController = {
             const category = await Category.findAll({
                 limit: 15,
                 offset,
-                order: [['name', 'ASC']],
+                order: [['id', 'ASC']],
                 include: [{
                     model: CategorySubscription,
                     required: true,

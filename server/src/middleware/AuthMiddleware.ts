@@ -2,6 +2,15 @@ import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 
 const authMiddleware = (req: Request, res: Response, next: NextFunction) => {
+  if (1==1) {
+    //Para testes, passa direto pela autenticação
+    req.body.session = {};
+    req.body.session.userId = 1;
+    req.body.session.email = 'matheus.burin@sou.unijui.edu.br';
+    next();
+    return
+  }
+
   const token = req.header('Authorization')?.replace('Bearer ', '');
 
   if (!token) {
