@@ -53,8 +53,8 @@ const NotificationList: React.FC = () => {
           </View>
         )}
         contentContainerStyle={notificationListCSS.listContent}
-        onEndReached={fetchNotifications} // Chamado ao atingir o final da lista
-        onEndReachedThreshold={0.5} // Define a porcentagem do final para disparar a função
+        onEndReached={fetchNotifications}
+        onEndReachedThreshold={0.5}
       />
     </View>
   );

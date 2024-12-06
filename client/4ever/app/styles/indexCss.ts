@@ -5,6 +5,11 @@ const indexCss = StyleSheet.create({
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
+      width: '100%',
+      height: '100%',
+    },
+    containerList: {
+      width:'100%'
     },
     title: {
       fontSize: 20,

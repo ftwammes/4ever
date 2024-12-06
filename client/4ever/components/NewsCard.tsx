@@ -4,23 +4,22 @@ import newsCardCSS from './css/NewsCardCSS';
 
 
 interface CardProps {
+  id: string;
   title: string;
-  subtitle: string;
   imageBase64: string;
   timestamp: string;
 }
 
-const Card: React.FC<CardProps> = ({ title, subtitle, imageBase64, timestamp }) => {
+const NewsCard: React.FC<CardProps> = ({ id, title, imageBase64, timestamp }) => {
   return (
     <View style={newsCardCSS.cardContainer}>
       <ImageBackground
-        source={{ uri: `data:image/png;base64,${imageBase64}` }}
+        source={{ uri: imageBase64 }}
         style={newsCardCSS.imageBackground}
         imageStyle={newsCardCSS.imageStyle}
       >
         <View style={newsCardCSS.overlay}>
           <Text style={newsCardCSS.title}>{title}</Text>
-          <Text style={newsCardCSS.subtitle}>{subtitle}</Text>
           <Text style={newsCardCSS.timestamp}>{timestamp}</Text>
         </View>
       </ImageBackground>
@@ -28,4 +27,4 @@ const Card: React.FC<CardProps> = ({ title, subtitle, imageBase64, timestamp }) 
   );
 };
 
-export default Card;
+export default NewsCard;

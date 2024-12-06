@@ -5,6 +5,7 @@ const notificationListCss = StyleSheet.create({
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
+      width: '100%',
     },
     title: {
       fontSize: 20,

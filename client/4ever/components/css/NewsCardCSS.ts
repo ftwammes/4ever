@@ -6,7 +6,7 @@ const newsCardCSS = StyleSheet.create({
       height: Dimensions.get('window').height * 0.25, 
       borderRadius: 15, 
       overflow: 'hidden',
-      marginBottom: 20,
+      marginTop: 20,
       alignSelf: 'center',
       shadowColor: '#000', 
       shadowOffset: { width: 0, height: 4 },
@@ -17,10 +17,10 @@ const newsCardCSS = StyleSheet.create({
     },
     imageBackground: {
       flex: 1,
-      justifyContent: 'flex-end',
+      justifyContent: 'flex-end'
     },
     imageStyle: {
-      borderRadius: 15, 
+      borderRadius: 15
     },
     overlay: {
       backgroundColor: 'rgba(0, 0, 0, 0.6)', 

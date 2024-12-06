@@ -1,6 +1,7 @@
 import { Model, DataTypes, Optional } from 'sequelize';
 import { sequelize } from '../database'; // Certifique-se de que o caminho está correto
 import CategorySubscription from './CategorySubscription';
+import Category from './Category';
 
 interface CategoryNewsAttributes {
   id: number;
@@ -47,8 +48,7 @@ CategoryNews.init(
   }
 );
 
+CategoryNews.belongsTo(Category, { foreignKey: 'categoryId' });
 CategoryNews.hasMany(CategorySubscription, { foreignKey: 'categoryId' });
-
-CategorySubscription.belongsTo(CategoryNews, { foreignKey: 'categoryId' });
 
 export default CategoryNews;
